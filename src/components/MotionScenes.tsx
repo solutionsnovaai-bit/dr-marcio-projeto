@@ -47,12 +47,12 @@ export function PhotoEssay() {
   const thirdY = useTransform(scrollYProgress, [0, 1], [100, -70])
   const scale = useTransform(scrollYProgress, [0, 0.6, 1], [1.1, 1, 1.03])
   const cards = [
-    { image: 'chaves', alt: 'Chaves sobre a bancada', title: 'Mais negócios.', tag: 'ANÚNCIOS QUE CONVERTEM', y: firstY },
-    { image: 'veleiro', alt: 'Veleiro ao pôr do sol', title: 'Menos esforço.', tag: 'A GENTE CUIDA DE TUDO', y: secondY },
-    { image: 'bmw', alt: 'Detalhe do farol de um carro', title: 'Mais alcance.', tag: 'FACEBOOK E INSTAGRAM', y: thirdY },
+    { image: 'chaves', alt: 'Modelo anatômico da coluna', title: 'Mais pacientes.', tag: 'CONTEÚDO QUE GERA CONSULTA', y: firstY },
+    { image: 'veleiro', alt: 'Exercício de reabilitação', title: 'Menos esforço.', tag: 'A IA CUIDA DO RESTO', y: secondY },
+    { image: 'bmw', alt: 'Detalhe do farol de um carro', title: 'Mais vendas.', tag: 'CARROS EM EVIDÊNCIA', y: thirdY },
   ]
   return <section className="photo-essay section-space" ref={ref} aria-label="Planos que merecem acontecer">
-    <div className="wrap essay-heading"><span className="eyebrow">PRESENÇA QUE TRABALHA POR VOCÊ.</span><h2>Menos <em>espera.</em><br />{' '}Mais <span>vendas.</span></h2><p>Enquanto você atende seus pacientes,<br />{' '}seus anúncios atendem os compradores.</p></div>
+    <div className="wrap essay-heading"><span className="eyebrow">PRESENÇA QUE TRABALHA POR VOCÊ.</span><h2>Menos <em>espera.</em><br />{' '}Mais <span>vendas.</span></h2><p>Enquanto você atende seus pacientes,<br />{' '}a IA atende compradores e agenda consultas.</p></div>
     <div className="essay-grid wrap">{cards.map((card, i) => <motion.figure key={card.image} className={`essay-card essay-card-${i + 1}`} style={reduced ? {} : { y: card.y }}><div className="essay-image"><motion.img style={reduced ? {} : { scale }} src={`/images/${card.image}.webp`} srcSet={imageSrcSet(card.image)} sizes="(max-width: 768px) 85vw, 31vw" width="1448" height="1086" alt={card.alt} loading="lazy" decoding="async" /></div><figcaption><span>{card.tag}</span><h3>{card.title}</h3></figcaption></motion.figure>)}</div>
     <div className="essay-foot wrap"><span>Seu próximo capítulo tem a sua assinatura.</span><a className="text-link" href="#contato">Comece por uma conversa <ArrowUpRight size={18} /></a></div>
   </section>
