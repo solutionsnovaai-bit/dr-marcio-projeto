@@ -62,7 +62,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => 
       <span className="eyebrow">PROPOSTA EXCLUSIVA</span>
       {links.map((l, i) => <a href={`#${l.id}`} key={l.id} onClick={() => setOpen(false)}><small>0{i + 1}</small>{l.name}<ArrowUpRight /></a>)}
       <a href="#contato" onClick={() => setOpen(false)}><small>04</small>Vamos conversar<ArrowUpRight /></a>
-      <p>Seu nome em evidência.<br />{' '}Seu tempo livre.</p>
+      <p>Inteligência para<br />{' '}cada frente.</p>
     </motion.nav>}</AnimatePresence>
   </header>
 }
@@ -148,7 +148,7 @@ function About() {
       <Reveal className="about-photo"><div className="about-image-frame"><motion.img initial={reduced ? false : { scale: 1.075 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.45, ease }} src="/images/tempo.webp" srcSet={imageSrcSet("tempo")} sizes={aboutSizes} decoding="async" alt="Médico conversando com a equipe no centro cirúrgico" width="1448" height="1086" loading="lazy" /></div><div className="experience-badge"><strong>24h</strong><span>ATENDIMENTO<br />{' '}COM INTELIGÊNCIA<br />{' '}ARTIFICIAL</span></div></Reveal>
       <Reveal className="about-content" delay={0.15}><span className="eyebrow">MUITO ALÉM DE ANÚNCIOS</span><h2>Duas frentes.<br />{' '}Um mesmo nome.<br />{' '}<em>A IA cuida das duas.</em></h2><p className="about-lead">No consultório ou na venda de um carro, o seu nome é o que gera confiança.</p><p>Dr. Márcio, a proposta começa pelos carros, mas não para neles. Conteúdo diário, atendimento com inteligência artificial e automações funcionam para qualquer frente em que o senhor atuar, inclusive a medicina.</p><p>Enquanto o senhor atende, a IA responde comprador, confirma paciente e organiza a agenda. O seu tempo fica para o que só o senhor pode fazer.</p><a className="text-link" href="#planos">Comparar os planos <ArrowUpRight size={18} /></a></Reveal>
     </div>
-    <div className="brand-statement" aria-hidden="true"><span>Seu nome em evidência.</span><em>Seu tempo livre.</em></div>
+    <div className="brand-statement" aria-hidden="true"><span>Inteligência para</span><em>cada frente.</em></div>
   </section>
 }
 
@@ -182,7 +182,7 @@ function Plans() {
 
 function Footer() {
   const { paused, toggle } = useMotionPreferences()
-  return <footer className="site-footer wrap"><div className="footer-main"><a href="#inicio" aria-label="Voltar ao início"><Logo /></a><p>Seu nome em evidência.<br />{' '}<em>Seu tempo livre.</em></p><div className="footer-actions"><a className="footer-instagram" href={COMPANY.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Dr. Márcio (abre em nova aba)"><BrandIcon brand="instagram" /><span>{COMPANY.instagramHandle}</span></a><a href="#inicio" className="back-top">VOLTAR AO TOPO <ArrowUpRight size={19} /></a></div></div><div className="footer-bottom"><span>© 2026 {COMPANY.name} · {COMPANY.crm}</span><span>{COMPANY.address}</span></div><button className="motion-toggle" onClick={toggle} aria-pressed={paused}>{paused ? 'Retomar movimento' : 'Pausar movimento'}</button><p className="footer-legal">Proposta comercial personalizada. Imagens ilustrativas.</p></footer>
+  return <footer className="site-footer wrap"><div className="footer-main"><a href="#inicio" aria-label="Voltar ao início"><Logo /></a><p>Inteligência para<br />{' '}<em>cada frente.</em></p><div className="footer-actions"><a className="footer-instagram" href={COMPANY.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Dr. Márcio (abre em nova aba)"><BrandIcon brand="instagram" /><span>{COMPANY.instagramHandle}</span></a><a href="#inicio" className="back-top">VOLTAR AO TOPO <ArrowUpRight size={19} /></a></div></div><div className="footer-bottom"><span>© 2026 {COMPANY.name} · {COMPANY.crm}</span><span>{COMPANY.address}</span></div><button className="motion-toggle" onClick={toggle} aria-pressed={paused}>{paused ? 'Retomar movimento' : 'Pausar movimento'}</button><p className="footer-legal">Proposta comercial personalizada. Imagens ilustrativas.</p></footer>
 }
 
 function Site() {

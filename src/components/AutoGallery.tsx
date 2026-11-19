@@ -49,7 +49,6 @@ export default function AutoGallery() {
         <AnimatePresence initial={false} custom={direction}>
           <motion.img key={slide.image} custom={direction} variants={{ enter: (d: number) => ({ opacity: 0, scale: 1.065, x: reduced ? 0 : d * 70 }), center: { opacity: 1, scale: 1, x: 0 }, exit: (d: number) => ({ opacity: 0, x: reduced ? 0 : d * -45 }) }} initial="enter" animate="center" exit="exit" transition={{ duration: reduced ? 0 : 0.85, ease }} src={`/images/${slide.image}.webp`} srcSet={imageSrcSet(slide.image)} sizes={gallerySizes} decoding="async" width="1448" height="1086" alt={slide.alt} loading="lazy" draggable={false} />
         </AnimatePresence>
-        <span className="image-label">SEU NOME EM EVIDÊNCIA.</span>
       </div>
       <div className="gallery-story" aria-live="off">
         <span className="chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}<small> / 09</small></span>
