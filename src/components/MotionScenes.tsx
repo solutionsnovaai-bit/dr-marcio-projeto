@@ -7,7 +7,7 @@ import { useMotionPreferences } from '../hooks/useMotionPreferences'
 import { useSceneActivity } from '../hooks/useSceneActivity'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const words = ['venda.', 'vitrine.', 'conquista.', 'chance.']
+const words = ['conquista.', 'consulta.', 'venda.', 'agenda.']
 
 export function HeroWord({ ready, active }: { ready: boolean; active: boolean }) {
   const { reduced } = useMotionPreferences()
@@ -24,8 +24,8 @@ export function WordRibbon() {
   const ref = useRef<HTMLDivElement>(null)
   const active = useSceneActivity(ref)
   const { reduced } = useMotionPreferences()
-  return <div ref={ref} className={`word-ribbon ${active && !reduced ? 'is-moving' : ''}`} aria-label="Mais visibilidade. Mais contatos. Mais vendas.">
-    <div className="word-ribbon-track" aria-hidden="true">{[0, 1].map(copy => <div className="word-ribbon-group" key={copy}><span>Mais <em>visibilidade.</em></span><ArrowUpRight /><span>Mais <em>contatos.</em></span><ArrowUpRight /><span>Mais <em>vendas.</em></span><ArrowUpRight /></div>)}</div>
+  return <div ref={ref} className={`word-ribbon ${active && !reduced ? 'is-moving' : ''}`} aria-label="Mais pacientes. Mais vendas. Mais tempo.">
+    <div className="word-ribbon-track" aria-hidden="true">{[0, 1].map(copy => <div className="word-ribbon-group" key={copy}><span>Mais <em>pacientes.</em></span><ArrowUpRight /><span>Mais <em>vendas.</em></span><ArrowUpRight /><span>Mais <em>tempo.</em></span><ArrowUpRight /></div>)}</div>
   </div>
 }
 
@@ -49,10 +49,10 @@ export function PhotoEssay() {
   const cards = [
     { image: 'chaves', alt: 'Modelo anatômico da coluna', title: 'Mais pacientes.', tag: 'CONTEÚDO QUE GERA CONSULTA', y: firstY },
     { image: 'veleiro', alt: 'Exercício de reabilitação', title: 'Menos esforço.', tag: 'A IA CUIDA DO RESTO', y: secondY },
-    { image: 'bmw', alt: 'Detalhe do farol de um carro', title: 'Mais vendas.', tag: 'CARROS EM EVIDÊNCIA', y: thirdY },
+    { image: 'destinos', alt: 'Pessoa com a mão no ombro', title: 'Mais tempo.', tag: 'ATENDIMENTO 24H COM IA', y: thirdY },
   ]
   return <section className="photo-essay section-space" ref={ref} aria-label="Planos que merecem acontecer">
-    <div className="wrap essay-heading"><span className="eyebrow">PRESENÇA QUE TRABALHA POR VOCÊ.</span><h2>Menos <em>espera.</em><br />{' '}Mais <span>vendas.</span></h2><p>Enquanto você atende seus pacientes,<br />{' '}a IA atende compradores e agenda consultas.</p></div>
+    <div className="wrap essay-heading"><span className="eyebrow">PRESENÇA QUE TRABALHA POR VOCÊ.</span><h2>Menos <em>tarefa.</em><br />{' '}Mais <span>resultado.</span></h2><p>Enquanto você atende seus pacientes,<br />{' '}a IA atende compradores e agenda consultas.</p></div>
     <div className="essay-grid wrap">{cards.map((card, i) => <motion.figure key={card.image} className={`essay-card essay-card-${i + 1}`} style={reduced ? {} : { y: card.y }}><div className="essay-image"><motion.img style={reduced ? {} : { scale }} src={`/images/${card.image}.webp`} srcSet={imageSrcSet(card.image)} sizes="(max-width: 768px) 85vw, 31vw" width="1448" height="1086" alt={card.alt} loading="lazy" decoding="async" /></div><figcaption><span>{card.tag}</span><h3>{card.title}</h3></figcaption></motion.figure>)}</div>
     <div className="essay-foot wrap"><span>Seu próximo capítulo tem a sua assinatura.</span><a className="text-link" href="#contato">Comece por uma conversa <ArrowUpRight size={18} /></a></div>
   </section>

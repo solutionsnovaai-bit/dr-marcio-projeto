@@ -23,10 +23,10 @@ export const chapters = [
 ]
 
 export const processSteps = [
-  { title: 'Organizamos o estoque.', label: 'Primeiro, os seus carros.', text: 'Recebemos as fotos e as informações de cada veículo e organizamos tudo para que nenhum anúncio saia incompleto.', points: ['Fotos tratadas e padronizadas', 'Ficha completa de cada carro', 'Preço e condições definidos com você'] },
-  { title: 'Criamos os anúncios.', label: 'Texto que vende.', text: 'Cada carro ganha título, descrição e destaques pensados para chamar atenção e gerar contato de quem realmente quer comprar.', points: ['Títulos e descrições estratégicas', 'Destaques de cada modelo', 'Padrão visual profissional'] },
-  { title: 'Publicamos onde o comprador está.', label: 'Facebook, Marketplace e Instagram.', text: 'Os anúncios entram no ar nas principais vitrines do Meta, com os contatos direcionados para o seu WhatsApp.', points: ['Facebook e Marketplace', 'Instagram', 'Contato direto pelo WhatsApp'] },
-  { title: 'Acompanhamos e renovamos.', label: 'Anúncio parado não vende.', text: 'Nos planos mensais, os anúncios são renovados e o perfil recebe conteúdo novo para manter os carros sempre em evidência.', points: ['Renovação ao longo do mês', 'Conteúdo e edição de vídeos', 'Atendimento 24h com IA no plano Secretária IA'] },
+  { title: 'Entendemos as suas frentes.', label: 'Consultório e negócios.', text: 'Uma conversa rápida para entender o que o senhor precisa hoje: pacientes, agenda, vendas ou tudo junto.', points: ['Sem reunião longa', 'Prioridades definidas com o senhor', 'Começamos pelo que dá resultado mais rápido'] },
+  { title: 'Montamos a presença.', label: 'Conteúdo todo dia.', text: 'Posts diários no Instagram e no Facebook, com padrão profissional, para a medicina e para os seus negócios.', points: ['Conteúdo de ortopedia que gera autoridade', 'Anúncios dos carros no Marketplace', 'Identidade visual com o seu logo'] },
+  { title: 'Ligamos a IA.', label: 'Ninguém sem resposta.', text: 'A secretária de IA atende pelo WhatsApp a qualquer hora: tira dúvidas, agenda consultas e responde interessados nos carros.', points: ['Atendimento 24h em segundos', 'Agenda e confirmação de consultas', 'Interessados filtrados antes de chegar ao senhor'] },
+  { title: 'Acompanhamos e melhoramos.', label: 'Resultado medido.', text: 'Todo mês o senhor recebe um resumo claro do que foi feito e do que trouxe resultado. O que funciona, a gente amplia.', points: ['Relatório mensal direto ao ponto', 'Novas automações conforme a necessidade', 'Ajustes sem burocracia'] },
 ]
 
 export const plans = [
@@ -36,10 +36,10 @@ export const plans = [
 ]
 
 export const faqs = [
+  { question: 'Serve só para os carros?', answer: 'Não. A mesma estrutura de conteúdo, atendimento com IA e automações funciona para o consultório: dúvidas de pacientes, agendamento e confirmação de consultas. Os carros são o ponto de partida.' },
   { question: 'Onde os anúncios são publicados?', answer: 'No Facebook (incluindo o Marketplace) e no Instagram, as vitrines onde está a maior parte dos compradores de carros da região. Os contatos são direcionados para o seu WhatsApp.' },
   { question: 'O que eu preciso enviar?', answer: 'As fotos de cada carro e as informações básicas: modelo, ano, quilometragem, opcionais e preço. A partir disso, cuidamos da organização, dos textos e da publicação.' },
   { question: 'O pacote de 50 anúncios tem mensalidade?', answer: 'Não. O pacote de anúncios é um serviço único: R$ 10 por carro, R$ 500 pelos 50. Nos planos mensais, os 50 anúncios já estão inclusos no primeiro mês, e a renovação semanal também.' },
   { question: 'Como funciona a secretária de IA?', answer: 'É uma assistente que atende pelo WhatsApp a qualquer hora: responde dúvidas, envia informações e fotos dos carros, qualifica quem está interessado e organiza as visitas. Você recebe o cliente pronto para negociar.' },
-  { question: 'Serve só para os carros?', answer: 'Não. A mesma estrutura de conteúdo, atendimento com IA e automações funciona para o consultório: dúvidas de pacientes, agendamento e confirmação de consultas. Os carros são o ponto de partida.' },
   { question: 'Em quanto tempo os anúncios entram no ar?', answer: 'Assim que as fotos e as informações chegam, os primeiros anúncios já começam a ser publicados. O prazo total depende da quantidade de carros e do material enviado.' },
 ]

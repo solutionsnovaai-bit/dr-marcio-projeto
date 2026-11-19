@@ -39,17 +39,17 @@ export default function AutoGallery() {
     return () => clearTimeout(timer)
   }, [visible, index])
   const slide = chapters[index]
-  return <section className="gallery-section gallery-v2" aria-label="O que muda com anúncios profissionais" ref={galleryRef}>
+  return <section className="gallery-section gallery-v2" aria-label="Uma estrutura para todas as frentes" ref={galleryRef}>
     <div className="gallery-heading wrap">
-      <motion.div initial={reduced ? false : { opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }}><span className="eyebrow">POR QUE ANÚNCIO PROFISSIONAL?</span><h2>O próximo capítulo<br />{' '}pode ser <em>extraordinário.</em></h2></motion.div>
-      <div className="gallery-intro"><p>Um bom anúncio não mostra só o carro.<br />{' '}Mostra a confiança<br />{' '}de quem está vendendo.</p><span className="gallery-small-line" /></div>
+      <motion.div initial={reduced ? false : { opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }}><span className="eyebrow">UMA ESTRUTURA. TODAS AS FRENTES.</span><h2>O próximo capítulo<br />{' '}pode ser <em>extraordinário.</em></h2></motion.div>
+      <div className="gallery-intro"><p>O que enche a agenda<br />{' '}também vende os carros.<br />{' '}A tecnologia é a mesma.</p><span className="gallery-small-line" /></div>
     </div>
     <div className="gallery-stage" tabIndex={0} role="region" aria-roledescription="carrossel" aria-label="Inspirações; imagens automáticas. Use as setas do teclado ou arraste para navegar." onKeyDown={e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(1) } if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1) } }} onFocus={() => setFocused(true)} onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false) }}>
       <div className="gallery-visual" onPointerDown={e => { start.current = { x: e.clientX, y: e.clientY }; setHolding(true); e.currentTarget.setPointerCapture(e.pointerId) }} onPointerUp={e => { if (start.current) { const dx = e.clientX - start.current.x; const dy = e.clientY - start.current.y; if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1) } start.current = null; setHolding(false) }} onPointerCancel={() => { start.current = null; setHolding(false) }}>
         <AnimatePresence initial={false} custom={direction}>
           <motion.img key={slide.image} custom={direction} variants={{ enter: (d: number) => ({ opacity: 0, scale: 1.065, x: reduced ? 0 : d * 70 }), center: { opacity: 1, scale: 1, x: 0 }, exit: (d: number) => ({ opacity: 0, x: reduced ? 0 : d * -45 }) }} initial="enter" animate="center" exit="exit" transition={{ duration: reduced ? 0 : 0.85, ease }} src={`/images/${slide.image}.webp`} srcSet={imageSrcSet(slide.image)} sizes={gallerySizes} decoding="async" width="1448" height="1086" alt={slide.alt} loading="lazy" draggable={false} />
         </AnimatePresence>
-        <span className="image-label">SEUS CARROS EM EVIDÊNCIA.</span>
+        <span className="image-label">SEU NOME EM EVIDÊNCIA.</span>
       </div>
       <div className="gallery-story" aria-live="off">
         <span className="chapter-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}<small> / 09</small></span>

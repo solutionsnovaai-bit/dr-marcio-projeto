@@ -62,7 +62,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => 
       <span className="eyebrow">PROPOSTA EXCLUSIVA</span>
       {links.map((l, i) => <a href={`#${l.id}`} key={l.id} onClick={() => setOpen(false)}><small>0{i + 1}</small>{l.name}<ArrowUpRight /></a>)}
       <a href="#contato" onClick={() => setOpen(false)}><small>04</small>Vamos conversar<ArrowUpRight /></a>
-      <p>Seus carros em evidência.<br />{' '}Seu tempo livre.</p>
+      <p>Seu nome em evidência.<br />{' '}Seu tempo livre.</p>
     </motion.nav>}</AnimatePresence>
   </header>
 }
@@ -92,12 +92,12 @@ function Hero({ ready }: { ready: boolean }) {
     </motion.div>
     <div className="hero-content">
       <motion.div className="eyebrow" initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: 0.25 }}><span className="gold-line" />PROPOSTA EXCLUSIVA · DR. MÁRCIO</motion.div>
-      <h1 aria-label="Seus carros. Sua próxima venda.">
-        {['Seus carros.', 'Sua próxima'].map((line, i) => <span className="line-mask" aria-hidden="true" key={line}><motion.span initial={reduced ? false : { y: '110%' }} animate={ready ? { y: 0 } : {}} transition={{ delay: 0.15 + i * 0.13, duration: 1.05, ease }}>{line}</motion.span></span>)}
+      <h1 aria-label="Seu nome. Sua próxima conquista.">
+        {['Seu nome.', 'Sua próxima'].map((line, i) => <span className="line-mask" aria-hidden="true" key={line}><motion.span initial={reduced ? false : { y: '110%' }} animate={ready ? { y: 0 } : {}} transition={{ delay: 0.15 + i * 0.13, duration: 1.05, ease }}>{line}</motion.span></span>)}
         <HeroWord ready={ready} active={active} />
       </h1>
       <motion.div initial={reduced ? false : { opacity: 0, y: 16 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.65, duration: 0.8 }}>
-        <p>50 anúncios profissionais no Facebook, Marketplace e Instagram.<br className="desktop-break" /> E uma presença digital à altura do seu nome.</p>
+        <p>Conteúdo todo dia, secretária de IA 24h e automações para o consultório e para os seus negócios.<br className="desktop-break" /> Começando pelos anúncios dos seus carros.</p>
         <a className="button button-dark" href="#planos"><span>Ver os planos</span><ArrowUpRight size={20} /></a>
         <a className="hero-secondary" href="#como-funciona">Entenda como funciona <ArrowDown size={14} /></a>
       </motion.div>
@@ -110,9 +110,9 @@ function Hero({ ready }: { ready: boolean }) {
 
 function TrustStrip() {
   return <div className="trust-strip">
-    <div><ShieldCheck /><span>Anúncios<br />{' '}<strong>com padrão profissional.</strong></span></div>
-    <div><FileCheck2 /><span>Facebook, Marketplace<br />{' '}<strong>e Instagram.</strong></span></div>
-    <div><Handshake /><span>Contatos<br />{' '}<strong>direto no seu WhatsApp.</strong></span></div>
+    <div><ShieldCheck /><span>Conteúdo<br />{' '}<strong>todo dia no Insta e no Face.</strong></span></div>
+    <div><FileCheck2 /><span>Secretária de IA<br />{' '}<strong>atendendo 24 horas.</strong></span></div>
+    <div><Handshake /><span>Anúncios dos carros<br />{' '}<strong>no ar em poucos dias.</strong></span></div>
     <a href="#planos">Ver os planos <ArrowUpRight size={19} /></a>
   </div>
 }
@@ -129,7 +129,7 @@ function Process() {
     document.getElementById(`step-tab-${next}`)?.focus()
   }
   return <section id="como-funciona" className="process-section wrap section-space">
-    <Reveal className="section-heading"><span className="eyebrow">SIMPLES PARA VOCÊ. TRABALHO COM A GENTE.</span><h2>Das fotos do carro<br />{' '}ao <em>cliente no WhatsApp.</em></h2></Reveal>
+    <Reveal className="section-heading"><span className="eyebrow">SIMPLES PARA O SENHOR. TRABALHO COM A GENTE.</span><h2>Do primeiro post<br />{' '}ao <em>cliente atendido.</em></h2></Reveal>
     <div className="process-grid">
       <Reveal className="process-tabs" delay={0.1}><div role="tablist" aria-label="Etapas do trabalho" aria-orientation="vertical" onKeyDown={onKey}>{processSteps.map((s, i) => <button key={s.title} id={`step-tab-${i}`} className={`process-tab ${active === i ? 'is-active' : ''}`} role="tab" aria-selected={active === i} aria-controls="process-panel" tabIndex={active === i ? 0 : -1} onClick={() => setActive(i)}><span className="step-number">0{i + 1}</span><span>{s.title}</span><ArrowUpRight size={23} /></button>)}</div><p>Você participa de cada decisão.<br />{' '}A nossa equipe acompanha cada etapa.</p></Reveal>
       <Reveal className="process-detail" delay={0.2}><div role="tabpanel" id="process-panel" aria-labelledby={`step-tab-${active}`} tabIndex={0}>
@@ -145,10 +145,10 @@ function About() {
   const { reduced } = useMotionPreferences()
   return <section id="sobre" className="about-section">
     <div className="about-grid wrap">
-      <Reveal className="about-photo"><div className="about-image-frame"><motion.img initial={reduced ? false : { scale: 1.075 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.45, ease }} src="/images/tempo.webp" srcSet={imageSrcSet("tempo")} sizes={aboutSizes} decoding="async" alt="Médico conversando com a equipe no centro cirúrgico" width="1448" height="1086" loading="lazy" /></div><div className="experience-badge"><strong>50</strong><span>ANÚNCIOS<br />{' '}PRONTOS PARA<br />{' '}ENTRAR NO AR</span></div></Reveal>
-      <Reveal className="about-content" delay={0.15}><span className="eyebrow">MUITO ALÉM DE UM ANÚNCIO</span><h2>Duas frentes.<br />{' '}Um mesmo nome.<br />{' '}<em>A IA cuida das duas.</em></h2><p className="about-lead">No consultório ou na venda de um carro, o seu nome é o que gera confiança.</p><p>Dr. Márcio, a proposta começa pelos carros, mas não para neles. Conteúdo diário, atendimento com inteligência artificial e automações funcionam para qualquer frente em que o senhor atuar, inclusive a medicina.</p><p>Enquanto o senhor atende, a IA responde comprador, confirma paciente e organiza a agenda. O seu tempo fica para o que só o senhor pode fazer.</p><a className="text-link" href="#planos">Comparar os planos <ArrowUpRight size={18} /></a></Reveal>
+      <Reveal className="about-photo"><div className="about-image-frame"><motion.img initial={reduced ? false : { scale: 1.075 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.45, ease }} src="/images/tempo.webp" srcSet={imageSrcSet("tempo")} sizes={aboutSizes} decoding="async" alt="Médico conversando com a equipe no centro cirúrgico" width="1448" height="1086" loading="lazy" /></div><div className="experience-badge"><strong>24h</strong><span>ATENDIMENTO<br />{' '}COM INTELIGÊNCIA<br />{' '}ARTIFICIAL</span></div></Reveal>
+      <Reveal className="about-content" delay={0.15}><span className="eyebrow">MUITO ALÉM DE ANÚNCIOS</span><h2>Duas frentes.<br />{' '}Um mesmo nome.<br />{' '}<em>A IA cuida das duas.</em></h2><p className="about-lead">No consultório ou na venda de um carro, o seu nome é o que gera confiança.</p><p>Dr. Márcio, a proposta começa pelos carros, mas não para neles. Conteúdo diário, atendimento com inteligência artificial e automações funcionam para qualquer frente em que o senhor atuar, inclusive a medicina.</p><p>Enquanto o senhor atende, a IA responde comprador, confirma paciente e organiza a agenda. O seu tempo fica para o que só o senhor pode fazer.</p><a className="text-link" href="#planos">Comparar os planos <ArrowUpRight size={18} /></a></Reveal>
     </div>
-    <div className="brand-statement" aria-hidden="true"><span>Seus carros em evidência.</span><em>Seu tempo livre.</em></div>
+    <div className="brand-statement" aria-hidden="true"><span>Seu nome em evidência.</span><em>Seu tempo livre.</em></div>
   </section>
 }
 
@@ -162,7 +162,7 @@ function Contact() {
   const wa = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`
   return <section id="contato" className="contact-section">
     <div className="contact-grid wrap">
-      <Reveal className="contact-copy"><span className="eyebrow">O PRÓXIMO PASSO</span><h2>Vamos colocar<br />{' '}<em>seus carros</em><br />{' '}no ar?</h2><p>Escolha o plano e chame no WhatsApp.<br />{' '}Os primeiros anúncios começam assim que as fotos chegarem.</p><div className="contact-note"><ShieldCheck size={21} /><span>Sem fidelidade no pacote de anúncios.<br />{' '}Você decide até onde quer ir.</span></div></Reveal>
+      <Reveal className="contact-copy"><span className="eyebrow">O PRÓXIMO PASSO</span><h2>Vamos começar<br />{' '}<em>pelo que o senhor</em><br />{' '}precisa hoje?</h2><p>Escolha o plano e chame no WhatsApp.<br />{' '}Em poucos dias, tudo já está rodando.</p><div className="contact-note"><ShieldCheck size={21} /><span>Sem fidelidade no pacote de anúncios.<br />{' '}Você decide até onde quer ir.</span></div></Reveal>
       <Reveal className="contact-form-wrap" delay={0.15}><div className="contact-form"><div className="form-heading"><span>{COMPANY.name}</span><span className="eyebrow">{COMPANY.crm}</span></div><p className="form-info">{COMPANY.address}</p><a className="button button-gold" href={wa} target="_blank" rel="noopener noreferrer"><span>Falar no WhatsApp</span><ArrowUpRight size={20} /></a><a className="contact-email" href={COMPANY.instagram} target="_blank" rel="noopener noreferrer"><BrandIcon brand="instagram" /><span>{COMPANY.instagramHandle}</span><ArrowUpRight size={20} /></a></div></Reveal>
     </div>
   </section>
@@ -182,7 +182,7 @@ function Plans() {
 
 function Footer() {
   const { paused, toggle } = useMotionPreferences()
-  return <footer className="site-footer wrap"><div className="footer-main"><a href="#inicio" aria-label="Voltar ao início"><Logo /></a><p>Seus carros em evidência.<br />{' '}<em>Seu tempo livre.</em></p><div className="footer-actions"><a className="footer-instagram" href={COMPANY.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Dr. Márcio (abre em nova aba)"><BrandIcon brand="instagram" /><span>{COMPANY.instagramHandle}</span></a><a href="#inicio" className="back-top">VOLTAR AO TOPO <ArrowUpRight size={19} /></a></div></div><div className="footer-bottom"><span>© 2026 {COMPANY.name} · {COMPANY.crm}</span><span>{COMPANY.address}</span></div><button className="motion-toggle" onClick={toggle} aria-pressed={paused}>{paused ? 'Retomar movimento' : 'Pausar movimento'}</button><p className="footer-legal">Proposta comercial personalizada. Imagens ilustrativas.</p></footer>
+  return <footer className="site-footer wrap"><div className="footer-main"><a href="#inicio" aria-label="Voltar ao início"><Logo /></a><p>Seu nome em evidência.<br />{' '}<em>Seu tempo livre.</em></p><div className="footer-actions"><a className="footer-instagram" href={COMPANY.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram do Dr. Márcio (abre em nova aba)"><BrandIcon brand="instagram" /><span>{COMPANY.instagramHandle}</span></a><a href="#inicio" className="back-top">VOLTAR AO TOPO <ArrowUpRight size={19} /></a></div></div><div className="footer-bottom"><span>© 2026 {COMPANY.name} · {COMPANY.crm}</span><span>{COMPANY.address}</span></div><button className="motion-toggle" onClick={toggle} aria-pressed={paused}>{paused ? 'Retomar movimento' : 'Pausar movimento'}</button><p className="footer-legal">Proposta comercial personalizada. Imagens ilustrativas.</p></footer>
 }
 
 function Site() {
@@ -209,7 +209,7 @@ function Site() {
       <main id="conteudo">
         <Hero ready={!loading} />
         <TrustStrip />
-        <section className="intro-section wrap section-space" id="possibilidades"><Reveal><span className="eyebrow">A PROPOSTA</span><h2>Carro parado<br />{' '}<em>é dinheiro parado.</em></h2></Reveal><Reveal className="intro-copy" delay={0.2}><p>Hoje, a maioria dos compradores começa a busca pelo celular: Facebook, Marketplace e Instagram. Quem aparece bem nessas vitrines vende primeiro.</p><p>Esta proposta coloca os seus 50 carros no ar com padrão profissional e mostra como ir além: presença digital constante e atendimento automático, para nenhum interessado ficar sem resposta.</p><a className="text-link" href="#como-funciona">Veja como funciona <ArrowUpRight size={18} /></a></Reveal></section>
+        <section className="intro-section wrap section-space" id="possibilidades"><Reveal><span className="eyebrow">A PROPOSTA</span><h2>Tempo de médico<br />{' '}<em>vale demais.</em></h2></Reveal><Reveal className="intro-copy" delay={0.2}><p>Paciente e comprador começam a busca no mesmo lugar: o celular. Quem aparece todo dia e responde rápido é quem é lembrado.</p><p>A proposta é simples: a gente assume o digital. Conteúdo, anúncios e atendimento com inteligência artificial, enquanto o senhor faz o que só o senhor pode fazer.</p><a className="text-link" href="#como-funciona">Veja como funciona <ArrowUpRight size={18} /></a></Reveal></section>
         <WordRibbon />
         <Gallery />
         <Process />
