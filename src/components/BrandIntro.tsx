@@ -35,8 +35,8 @@ export default function BrandIntro({ onComplete }: { onComplete: () => void }) {
     <div className="intro-top"><button onClick={complete}>Pular abertura <ArrowUpRight size={16} /></button></div>
     <div className="intro-brand-film">
       <div className="intro-logo-space">
-        <motion.div className="intro-logo-reveal" initial={{ clipPath: 'inset(0 100% 0 0)', y: 14, scale: 0.965, rotateX: 6 }} animate={logoReady ? { clipPath: 'inset(0 0% 0 0)', y: 0, scale: 1, rotateX: 0 } : {}} transition={{ duration: 1.5, delay: 0.18, ease }}><img className="intro-logo-img" src="/images/logo.webp" width="700" height="875" alt="Márcio Cesar da Silva, CRM 9177" /></motion.div>
-        <motion.div className="intro-logo-light" aria-hidden="true" initial={{ clipPath: 'inset(0 100% 0 0)' }} animate={logoReady ? { clipPath: ['inset(0 100% 0 0)', 'inset(0 40% 0 30%)', 'inset(0 0% 0 100%)'] } : {}} transition={{ duration: 0.95, delay: 1.35, ease }}><img className="intro-logo-img" src="/images/logo.webp" width="700" height="875" alt="" /></motion.div>
+        <motion.div className="intro-logo-reveal" initial={{ clipPath: 'inset(0 100% 0 0)', y: 14, scale: 0.965, rotateX: 6 }} animate={logoReady ? { clipPath: 'inset(0 0% 0 0)', y: 0, scale: 1, rotateX: 0 } : {}} transition={{ duration: 1.5, delay: 0.18, ease }}><img className="intro-logo-img" src="/images/logo.webp" width="620" height="665" alt="Márcio Cesar da Silva, CRM 9177" /></motion.div>
+        <motion.div className="intro-logo-light" aria-hidden="true" initial={{ clipPath: 'inset(0 100% 0 0)' }} animate={logoReady ? { clipPath: ['inset(0 100% 0 0)', 'inset(0 40% 0 30%)', 'inset(0 0% 0 100%)'] } : {}} transition={{ duration: 0.95, delay: 1.35, ease }}><img className="intro-logo-img" src="/images/logo.webp" width="620" height="665" alt="" /></motion.div>
       </div>
       <motion.p className="intro-brand-caption" aria-hidden="true" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.7, ease }}>Inteligência para cada frente.</motion.p>
     </div>
